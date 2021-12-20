@@ -1,4 +1,3 @@
-@@ -0,0 +1,466 @@
 --[[
 GUNGRAVE SOURCE LEAKED                                                                                                                                                                      
 --]]
@@ -35,11 +34,11 @@ game.StarterGui:SetCore(
     "SendNotification",
     {
 	Title = "GUNGRAVE ",
-	Text = "INSOMNIAC, You're whitelisted.",
+	Text = "UwU, You're whitelisted.",
 }
 )
 local L_3_ = loadstring(game:HttpGet("https://raw.githubusercontent.com/xHeptc/Kavo-UI-Library/main/source.lua"))()
-local L_4_ = L_3_.CreateLib("GUNGRAVE", "Ocean")
+local L_4_ = L_3_.CreateLib("GUNGRAVE", "Serpent")
 local L_5_ = L_4_:NewTab("Aimlock")
 local L_6_ = L_5_:NewSection("GUNGRAVE")
 L_6_:NewButton(
@@ -435,7 +434,7 @@ L_14_:NewKeybind(
 end
 )
 local L_17_ = L_4_:NewTab("ESP")
-local L_18_ = loadstring(game:HttpGet("https://kiriot22.com/releases/ESP.lua"))()
+local L_18_ = loadstring(game:HttpGet("https://raw.githubusercontent.com/theyhatecloud/GGV1/main/ggesp"))()
 local L_19_ = L_17_:NewSection("GUNGRAVE")
 L_19_:NewToggle(
     "ESP",
