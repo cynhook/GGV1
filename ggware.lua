@@ -429,7 +429,7 @@ L_14_:NewKeybind(
 end
 )
 local L_17_ = L_4_:NewTab("ESP")
-local L_18_ = loadstring(game:HttpGet("https://raw.githubusercontent.com/theyhatecloud/GGV1/main/ggesp"))()
+local L_18_ = loadstring(game:HttpGet("https://kiriot22.com/releases/ESP.lua"))()
 local L_19_ = L_17_:NewSection("GUNGRAVE")
 L_19_:NewToggle(
     "ESP",
