@@ -33,7 +33,7 @@ game.StarterGui:SetCore(
 }
 )
 local L_3_ = loadstring(game:HttpGet("https://raw.githubusercontent.com/theyhatecloud/GGV1/main/gui"))()
-local L_4_ = L_3_.CreateLib("GUNGRAVE","cum")
+local L_4_ = L_3_.CreateLib("GUNGRAVE","Serpent")
 local L_5_ = L_4_:NewTab("Aimlock")
 local L_6_ = L_5_:NewSection("GUNGRAVE")
 L_6_:NewButton(
