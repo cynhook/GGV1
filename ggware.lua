@@ -1,8 +1,3 @@
---[[
-GUNGRAVE SOURCE LEAKED                                                                                                                                                                      
---]]
-
-
 local L_1_ = "t"
 local L_2_ = game.Players.LocalPlayer:GetMouse()
 L_2_.KeyDown:Connect(
