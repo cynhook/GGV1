@@ -423,7 +423,7 @@ local L_14_ = L_13_:NewSection("GUNGRAVE")
 L_14_:NewKeybind(
     "Keybind Gui Toggle",
     "h",
-    Enum.KeyCode.V,
+    Enum.KeyCode.Period,
     function()
 	L_3_:ToggleUI()
 end
