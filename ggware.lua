@@ -28,7 +28,7 @@ end
 game.StarterGui:SetCore(
     "SendNotification",
     {
-	Title = "GUNGRAVE ",
+	Title = "https://discord.gg/ThAzXKYQQF",
 	Text = "UwU, You're whitelisted.",
 }
 )
