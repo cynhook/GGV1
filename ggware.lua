@@ -33,9 +33,9 @@ game.StarterGui:SetCore(
 }
 )
 local L_3_ = loadstring(game:HttpGet("https://raw.githubusercontent.com/theyhatecloud/GGV1/main/gui"))()
-local L_4_ = L_3_.CreateLib("GUNGRAVE","Serpent")
+local L_4_ = L_3_.CreateLib("Larp.LOL","Serpent")
 local L_5_ = L_4_:NewTab("Aimlock")
-local L_6_ = L_5_:NewSection("GUNGRAVE")
+local L_6_ = L_5_:NewSection("Larp.LOL")
 L_6_:NewButton(
     "Aimlock",
     "Beam niggas down",
@@ -249,7 +249,7 @@ L_6_:NewDropdown(
 end
 )
 local L_7_ = L_4_:NewTab("Silent Aim")
-local L_8_ = L_7_:NewSection("GUNGRAVE")
+local L_8_ = L_7_:NewSection("Larp.LOL")
 L_8_:NewButton(
     "Silent Aim",
     "Silent Aim Toggle Key is T.",
@@ -292,7 +292,7 @@ L_8_:NewToggle(
 end
 )
 local L_11_ = L_4_:NewTab("Antilock")
-local L_12_ = L_11_:NewSection("GUNGRAVE")
+local L_12_ = L_11_:NewSection("Larp.lol")
 L_12_:NewButton(
     "Anti-Lock",
     "Key is Z.",
@@ -419,7 +419,7 @@ L_12_:NewButton(
 end
 )
 local L_13_ = L_4_:NewTab("Settings")
-local L_14_ = L_13_:NewSection("GUNGRAVE")
+local L_14_ = L_13_:NewSection("Larp.LOL")
 L_14_:NewKeybind(
     "Keybind Gui Toggle",
     "h",
@@ -430,7 +430,7 @@ end
 )
 local L_17_ = L_4_:NewTab("ESP")
 local L_18_ = loadstring(game:HttpGet("https://raw.githubusercontent.com/theyhatecloud/GGV1/main/ggesp"))()
-local L_19_ = L_17_:NewSection("GUNGRAVE")
+local L_19_ = L_17_:NewSection("Larp.LOL")
 L_19_:NewToggle(
     "ESP",
     "ESP",
