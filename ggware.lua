@@ -41,6 +41,8 @@ L_6_:NewButton(
     "Beam niggas down",
     function()
 loadstring(game:HttpGet("https://raw.githubusercontent.com/neverlackinga/thursky.lol/main/Protected.txt?token=GHSAT0AAAAAABUCXRUF6RPU74Q3M6LBWEDSYUIS3OA)()
+end
+)
 L_6_:NewTextBox(
     "Aimlock Key",
     "Aimlock Key should be lowercase.",
