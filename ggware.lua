@@ -28,125 +28,197 @@ end
 game.StarterGui:SetCore(
     "SendNotification",
     {
-	Title = "Neverlockin",
+	Title = "https://discord.gg/ThAzXKYQQF",
 	Text = "UwU, You're whitelisted.",
 }
 )
 local L_3_ = loadstring(game:HttpGet("https://raw.githubusercontent.com/theyhatecloud/GGV1/main/gui"))()
-local L_4_ = L_3_.CreateLib("Neverlockin","Serpent")
+local L_4_ = L_3_.CreateLib("Larp.LOL","Serpent")
 local L_5_ = L_4_:NewTab("Aimlock")
-local L_6_ = L_5_:NewSection("Neverlockin")
+local L_6_ = L_5_:NewSection("Larp.LOL")
 L_6_:NewButton(
     "Aimlock",
-    "Rage lock key is q",
+    "Beam niggas down",
     function()
-local CC = game:GetService"Workspace".CurrentCamera
-    local Plr
-    local enabled = falseWD
-    local accomidationfactor = 0.129145
-    local mouse = game.Players.LocalPlayer:GetMouse()
-    local placemarker = Instance.new("Part", game.Workspace)
-
-    function makemarker(Parent, Adornee, Color, Size, Size2)
-        local e = Instance.new("BillboardGui", Parent)
-        e.Name = "PP"
-        e.Adornee = Adornee
-        e.Size = UDim2.new(Size, Size2, Size, Size2)
-        e.AlwaysOnTop = true
-        local a = Instance.new("Frame", e)
-        a.Size = UDim2.new(1, 0, 1, 0)
-        a.BackgroundTransparency = 0
-        a.BackgroundColor3 = Color
-        local g = Instance.new("UICorner", a)
-        g.CornerRadius = UDim.new(50, 50)
-        return(e)
-    end
-
-    
-    local data = game.Players:GetPlayers()
-    function noob(player)
-        local character
-        repeat wait() until player.Character
-        local handler = makemarker(guimain, player.Character:WaitForChild("HumanoidRootPart"), Color3.fromRGB(168, 245, 255), 0.3, 3)
-        handler.Name = player.Name
-        player.CharacterAdded:connect(function(Char) handler.Adornee = Char:WaitForChild("HumanoidRootPart") end)
-
-
-        spawn(function()
-            while wait() do
-                if player.Character then
-                    TextLabel.Text = player.Name..tostring(player:WaitForChild("leaderstats").Wanted.Value).." | "..tostring(math.floor(player.Character:WaitForChild("Humanoid").Health))
-                end
-            end
-        end)
-    end
-
-    for i = 1, #data do
-        if data[i] ~= game.Players.LocalPlayer then
-            noob(data[i])
-        end
-    end
-
-    game.Players.PlayerAdded:connect(function(Player)
-        noob(Player)
-    end)
-
-    spawn(function()
-        placemarker.Anchored = true
-        placemarker.CanCollide = false
-        placemarker.Size = Vector3.new(8, 8, 8)
-        placemarker.Transparency = 0.75
-        makemarker(placemarker, placemarker, Color3.fromRGB(168, 245, 255), 0.40, 0)
-    end)    
-
-mouse.KeyDown:Connect(function(k)
-    if k ~= "q" then return end
-    if enabled then
-        enabled = false
-        guimain[Plr.Name].Frame.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
-    else
-        enabled = true 
-        Plr = getClosestPlayerToCursor()
-        guimain[Plr.Name].Frame.BackgroundColor3 = Color3.fromRGB(255, 0, 0)
-    end    
-end)
-
-    function getClosestPlayerToCursor()
-        local closestPlayer
-        local shortestDistance = math.huge
-
-        for i, v in pairs(game.Players:GetPlayers()) do
-            if v ~= game.Players.LocalPlayer and v.Character and v.Character:FindFirstChild("Humanoid") and v.Character.Humanoid.Health ~= 0 and v.Character:FindFirstChild("HumanoidRootPart") then
-                local pos = CC:WorldToViewportPoint(v.Character.PrimaryPart.Position)
-                local magnitude = (Vector2.new(pos.X, pos.Y) - Vector2.new(mouse.X, mouse.Y)).magnitude
-                if magnitude < shortestDistance then
-                    closestPlayer = v
-                    shortestDistance = magnitude
-                end
-            end
-        end
-        return closestPlayer
-    end
-
-    game:GetService"RunService".Stepped:connect(function()
-        if enabled and Plr.Character and Plr.Character:FindFirstChild("HumanoidRootPart") then
-            placemarker.CFrame = CFrame.new(Plr.Character.HumanoidRootPart.Position+(Plr.Character.HumanoidRootPart.Velocity*accomidationfactor))
-        else
-            placemarker.CFrame = CFrame.new(0, 9999, 0)
-        end
-    end)
-
-    local mt = getrawmetatable(game)
-    local old = mt.__namecall
-    setreadonly(mt, false)
-    mt.__namecall = newcclosure(function(...)
-        local args = {...}
-        if enabled and getnamecallmethod() == "FireServer" and args[2] == "UpdateMousePos" then
-            args[3] = Plr.Character.HumanoidRootPart.Position+(Plr.Character.HumanoidRootPart.Velocity*accomidationfactor)
-            return old(unpack(args))
-        end
-        return old(...)
-    end)
+	getgenv().AimPart = "HumanoidRootPart"
+	getgenv().AimlockKey = "q"
+	getgenv().AimRadius = 30
+	getgenv().ThirdPerson = true
+	getgenv().FirstPerson = true
+	getgenv().TeamCheck = false
+	getgenv().PredictMovement = true
+	getgenv().PredictionVelocity = 9
+	local L_27_, L_28_, L_29_, L_30_ =
+            game:GetService "Players",
+            game:GetService "UserInputService",
+            game:GetService "RunService",
+            game:GetService "StarterGui"
+	local L_31_, L_32_, L_33_, L_34_, L_35_, L_36_, L_37_ =
+            L_27_.LocalPlayer,
+            L_27_.LocalPlayer:GetMouse(),
+            workspace.CurrentCamera,
+            CFrame.new,
+            Ray.new,
+            Vector3.new,
+            Vector2.new
+	local L_38_, L_39_, L_40_ = true, false, false
+	local L_41_
+	getgenv().CiazwareUniversalAimbotLoaded = true
+	getgenv().WorldToViewportPoint = function(L_42_arg0)
+		return L_33_:WorldToViewportPoint(L_42_arg0)
+	end
+	getgenv().WorldToScreenPoint = function(L_43_arg0)
+		return L_33_.WorldToScreenPoint(L_33_, L_43_arg0)
+	end
+	getgenv().GetObscuringObjects = function(L_44_arg0)
+		if L_44_arg0 and L_44_arg0:FindFirstChild(getgenv().AimPart) and L_31_ and L_31_.Character:FindFirstChild("Head") then
+			local L_45_ = workspace:FindPartOnRay(L_35_(L_44_arg0[getgenv().AimPart].Position, L_31_.Character.Head.Position))
+			if L_45_ then
+				return L_45_:IsDescendantOf(L_44_arg0)
+			end
+		end
+	end
+	getgenv().GetNearestTarget = function()
+		local L_46_ = {}
+		local L_47_ = {}
+		local L_48_ = {}
+		for L_50_forvar0, L_51_forvar1 in pairs(L_27_:GetPlayers()) do
+			if L_51_forvar1 ~= L_31_ then
+				table.insert(L_46_, L_51_forvar1)
+			end
+		end
+		for L_52_forvar0, L_53_forvar1 in pairs(L_46_) do
+			if L_53_forvar1.Character ~= nil then
+				local L_54_ = L_53_forvar1.Character:FindFirstChild("Head")
+				if getgenv().TeamCheck == true and L_53_forvar1.Team ~= L_31_.Team then
+					local L_55_ =
+                            (L_53_forvar1.Character:FindFirstChild("Head").Position - game.Workspace.CurrentCamera.CFrame.p).magnitude
+					local L_56_ =
+                            Ray.new(
+                            game.Workspace.CurrentCamera.CFrame.p,
+                            (L_32_.Hit.p - game.Workspace.CurrentCamera.CFrame.p).unit * L_55_
+                        )
+					local L_57_, L_58_ = game.Workspace:FindPartOnRay(L_56_, game.Workspace)
+					local L_59_ = math.floor((L_58_ - L_54_.Position).magnitude)
+					L_47_[L_53_forvar1.Name .. L_52_forvar0] = {}
+					L_47_[L_53_forvar1.Name .. L_52_forvar0].dist = L_55_
+					L_47_[L_53_forvar1.Name .. L_52_forvar0].plr = L_53_forvar1
+					L_47_[L_53_forvar1.Name .. L_52_forvar0].diff = L_59_
+					table.insert(L_48_, L_59_)
+				elseif getgenv().TeamCheck == false and L_53_forvar1.Team == L_31_.Team then
+					local L_60_ =
+                            (L_53_forvar1.Character:FindFirstChild("Head").Position - game.Workspace.CurrentCamera.CFrame.p).magnitude
+					local L_61_ =
+                            Ray.new(
+                            game.Workspace.CurrentCamera.CFrame.p,
+                            (L_32_.Hit.p - game.Workspace.CurrentCamera.CFrame.p).unit * L_60_
+                        )
+					local L_62_, L_63_ = game.Workspace:FindPartOnRay(L_61_, game.Workspace)
+					local L_64_ = math.floor((L_63_ - L_54_.Position).magnitude)
+					L_47_[L_53_forvar1.Name .. L_52_forvar0] = {}
+					L_47_[L_53_forvar1.Name .. L_52_forvar0].dist = L_60_
+					L_47_[L_53_forvar1.Name .. L_52_forvar0].plr = L_53_forvar1
+					L_47_[L_53_forvar1.Name .. L_52_forvar0].diff = L_64_
+					table.insert(L_48_, L_64_)
+				end
+			end
+		end
+		if unpack(L_48_) == nil then
+			return nil
+		end
+		local L_49_ = math.floor(math.min(unpack(L_48_)))
+		if L_49_ > getgenv().AimRadius then
+			return nil
+		end
+		for L_65_forvar0, L_66_forvar1 in pairs(L_47_) do
+			if L_66_forvar1.diff == L_49_ then
+				return L_66_forvar1.plr
+			end
+		end
+		return nil
+	end
+	L_32_.KeyDown:Connect(
+            function(L_67_arg0)
+		if L_67_arg0 == AimlockKey and L_41_ == nil then
+			pcall(
+                        function()
+				if L_39_ ~= true then
+					L_39_ = true
+				end
+				local L_68_
+				L_68_ = GetNearestTarget()
+				if L_68_ ~= nil then
+					L_41_ = L_68_
+				end
+			end
+                    )
+		elseif L_67_arg0 == AimlockKey and L_41_ ~= nil then
+			if L_41_ ~= nil then
+				L_41_ = nil
+			end
+			if L_39_ ~= false then
+				L_39_ = false
+			end
+		end
+	end
+        )
+	L_29_.RenderStepped:Connect(
+            function()
+		if getgenv().ThirdPerson == true and getgenv().FirstPerson == true then
+			if
+                        (L_33_.Focus.p - L_33_.CoordinateFrame.p).Magnitude > 1 or
+                            (L_33_.Focus.p - L_33_.CoordinateFrame.p).Magnitude <= 1
+                     then
+				L_40_ = true
+			else
+				L_40_ = false
+			end
+		elseif getgenv().ThirdPerson == true and getgenv().FirstPerson == false then
+			if (L_33_.Focus.p - L_33_.CoordinateFrame.p).Magnitude > 1 then
+				L_40_ = true
+			else
+				L_40_ = false
+			end
+		elseif getgenv().ThirdPerson == false and getgenv().FirstPerson == true then
+			if (L_33_.Focus.p - L_33_.CoordinateFrame.p).Magnitude <= 1 then
+				L_40_ = true
+			else
+				L_40_ = false
+			end
+		end
+		if L_38_ == true and L_39_ == true then
+			if L_41_ and L_41_.Character and L_41_.Character:FindFirstChild(getgenv().AimPart) then
+				if getgenv().FirstPerson == true then
+					if L_40_ == true then
+						if getgenv().PredictMovement == true then
+							L_33_.CFrame =
+                                        L_34_(
+                                        L_33_.CFrame.p,
+                                        L_41_.Character[getgenv().AimPart].Position +
+                                            L_41_.Character[getgenv().AimPart].Velocity / PredictionVelocity
+                                    )
+						elseif getgenv().PredictMovement == false then
+							L_33_.CFrame = L_34_(L_33_.CFrame.p, L_41_.Character[getgenv().AimPart].Position)
+						end
+					end
+				elseif getgenv().ThirdPerson == true then
+					if L_40_ == true then
+						if getgenv().PredictMovement == true then
+							L_33_.CFrame =
+                                        L_34_(
+                                        L_33_.CFrame.p,
+                                        L_41_.Character[getgenv().AimPart].Position +
+                                            L_41_.Character[getgenv().AimPart].Velocity / PredictionVelocity
+                                    )
+						elseif getgenv().PredictMovement == false then
+							L_33_.CFrame = L_34_(L_33_.CFrame.p, L_41_.Character[getgenv().AimPart].Position)
+						end
+					end
+				end
+			end
+		end
+	end
+        )
 end
 )
 L_6_:NewTextBox(
@@ -177,7 +249,7 @@ L_6_:NewDropdown(
 end
 )
 local L_7_ = L_4_:NewTab("Silent Aim")
-local L_8_ = L_7_:NewSection("Neverlockin")
+local L_8_ = L_7_:NewSection("Larp.LOL")
 L_8_:NewButton(
     "Silent Aim",
     "Silent Aim Toggle Key is T.",
@@ -220,7 +292,7 @@ L_8_:NewToggle(
 end
 )
 local L_11_ = L_4_:NewTab("Antilock")
-local L_12_ = L_11_:NewSection("Neverlockin")
+local L_12_ = L_11_:NewSection("Larp.lol")
 L_12_:NewButton(
     "Anti-Lock",
     "Key is Z.",
@@ -347,7 +419,7 @@ L_12_:NewButton(
 end
 )
 local L_13_ = L_4_:NewTab("Settings")
-local L_14_ = L_13_:NewSection("Neverlockin")
+local L_14_ = L_13_:NewSection("Larp.LOL")
 L_14_:NewKeybind(
     "Keybind Gui Toggle",
     "h",
@@ -358,7 +430,7 @@ end
 )
 local L_17_ = L_4_:NewTab("ESP")
 local L_18_ = loadstring(game:HttpGet("https://raw.githubusercontent.com/theyhatecloud/GGV1/main/ggesp"))()
-local L_19_ = L_17_:NewSection("Neverlockin")
+local L_19_ = L_17_:NewSection("Larp.LOL")
 L_19_:NewToggle(
     "ESP",
     "ESP",
