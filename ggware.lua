@@ -40,7 +40,7 @@ L_6_:NewButton(
     "Aimlock",
     "Beam niggas down",
     function()
-loadstring(game:HttpGet("https://raw.githubusercontent.com/neverlackinga/thursky.lol/main/Protected.txt?token=GHSAT0AAAAAABUCXRUF6RPU74Q3M6LBWEDSYUIS3OA)()
+loadstring(game:HttpGet("https://raw.githubusercontent.com/neverlackinga/thursky.lol/main/Protected.lua?token=GHSAT0AAAAAABUCXRUFYOEXM2BZU4WWODJEYUITFDA"))()
 end
 )
 L_6_:NewTextBox(
