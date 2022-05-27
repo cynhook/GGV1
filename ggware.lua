@@ -1,14 +1,7 @@
-game.StarterGui:SetCore(
-    "SendNotification",
-    {
-	Title = "https://discord.gg/ThAzXKYQQF",
-	Text = "UwU, You're whitelisted.",
-}
-)
 local L_3_ = loadstring(game:HttpGet("https://raw.githubusercontent.com/theyhatecloud/GGV1/main/gui"))()
-local L_4_ = L_3_.CreateLib("Larp.LOL","Serpent")
+local L_4_ = L_3_.CreateLib("Larp.LOL","DarkTheme")
 local L_13_ = L_4_:NewTab("Settings")
-local L_14_ = L_13_:NewSection("Larp.LOL")
+local L_14_ = L_13_:NewSection("UwU esp")
 L_14_:NewKeybind(
     "Keybind Gui Toggle",
     "h",
@@ -19,7 +12,7 @@ end
 )
 local L_17_ = L_4_:NewTab("ESP")
 local L_18_ = loadstring(game:HttpGet("https://raw.githubusercontent.com/theyhatecloud/GGV1/main/ggesp"))()
-local L_19_ = L_17_:NewSection("Larp.LOL")
+local L_19_ = L_17_:NewSection("UwU esp")
 L_19_:NewToggle(
     "ESP",
     "ESP",
