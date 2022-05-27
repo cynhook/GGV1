@@ -1,5 +1,5 @@
 local L_3_ = loadstring(game:HttpGet("https://raw.githubusercontent.com/theyhatecloud/GGV1/main/gui"))()
-local L_4_ = L_3_.CreateLib("Larp.LOL","DarkTheme")
+local L_4_ = L_3_.CreateLib("UwU esp","DarkTheme")
 local L_13_ = L_4_:NewTab("Settings")
 local L_14_ = L_13_:NewSection("UwU esp")
 L_14_:NewKeybind(
